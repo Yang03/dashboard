@@ -4,6 +4,7 @@
     "target": "ES6",
     "module": "commonjs",
     "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "noImplicitThis": true,
     "noUnusedLocals": true,
@@ -11,7 +12,8 @@
     "pretty": true,
     "declaration": true,
     "sourceMap": true,
-    "outDir": "dist"
+    "outDir": "dist",
+    "baseUrl": "./src"
   },
   "files": [
     "src/index.ts"

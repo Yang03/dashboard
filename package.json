@@ -6,8 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc",
-    "dev": "nodemon -w src -x ts-node src/index.ts",
-    "dev2": "nodemon"
+    "dev": "nodemon"
   },
   "repository": {
     "type": "git",
@@ -21,6 +20,8 @@
   "homepage": "https://github.com/Yang03/dashboard#readme",
   "devDependencies": {
     "@types/koa": "^2.0.43",
+    "@types/koa-router": "^7.0.27",
+    "@types/node": "^9.3.0",
     "nodemon": "1.12.1",
     "pandora": "^1.6.23",
     "ts-node": "^4.1.0",
@@ -28,7 +29,8 @@
     "typescript": "^2.6.2"
   },
   "dependencies": {
-    "@types/node": "^9.3.0",
-    "koa": "^2.4.1"
+    "koa": "^2.4.1",
+    "koa-router": "^7.3.0",
+    "reflect-metadata": "^0.1.10"
   }
 }
