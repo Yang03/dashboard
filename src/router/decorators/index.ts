@@ -7,11 +7,10 @@ export function Controller(pathUrl: string = '') {
         const routes = [];
 
         for(const route of routeDefs) {
-       
             const params = Reflect.getMetadata('$routes' + `_${route.name}`, proto) || [];
             routes.push({
                 method: route.method,
-                url: path.join('/', pathUrl, route.path),
+                'path': path.join('/', pathUrl, route.path),
                 name: route.name,
                 params,
                 fn: proto[route.name]
