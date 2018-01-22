@@ -9,8 +9,8 @@ export function createServer(app: any, routerRoutes: any, controllers: any): any
     }
     for(const ctrl of controllerClasses) {
         const routes = Reflect.getMetadata('$routes', ctrl);
-        for(const { method, path, fn} of routes) {
-          routerRoutes[method](path, fn);
+        for(const { method, path, controller } of routes) {
+          routerRoutes[method](path, controller);
         }
     }
     app.use(routerRoutes.routes());
