@@ -6,7 +6,7 @@
     "moduleResolution": "node",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "allowJs": true,
+    "esModuleInterop": true,
     "noImplicitThis": true,
     "noUnusedLocals": true,
     "stripInternal": true,
