@@ -7,6 +7,7 @@ import * as path from "path";
 export function importClassesFromDirectories(directories: string[], formats = [".js", ".ts"]): Function[] {
 
     const loadFileClasses = function (exported: any, allLoaded: Function[]) {
+        console.log(exported)
         if (exported instanceof Function) {
             allLoaded.push(exported);
         } else if (exported instanceof Array) {

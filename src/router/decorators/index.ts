@@ -3,6 +3,7 @@ import { METHODS } from '../contants'
 
 export function Controller(pathUrl: string = '') {
     return function(target) {
+
         const proto = target.prototype;
         const routeDefs = Reflect.getMetadata('$routes', proto) || [];
         const routes = [];
@@ -21,10 +22,34 @@ export function Controller(pathUrl: string = '') {
     }   
 }
 
+// export function Service() {
+
+//     return function(target) {
+        
+//         const types = Reflect.getMetadata('$Service', target) || []
+        
+//         Reflect.defineMetadata('$Service', types, target);
+//         return target;
+//     }
+//     //Reflect.defineMetadata('$service', routes, target);
+// }
+
+// export function inject(target) {
+//     //console.log('service')
+//     //console.log(arguments)
+//     return function(target): any {
+//         return ''
+//         // console.log('service')
+//         //console.log(arguments)
+//         //console.log(Reflect.getMetadata('$Service', target));
+//         //return Reflect.getMetadata('$Service', target)
+//     }
+// }
+
 export function Route(method: string, path: string = '') {
     return (target: any, name: string, descriptor: TypedPropertyDescriptor<any>) => {
         const meta = Reflect.getMetadata('$routes', target) || [];
-        console.log({ method, path, name })
+        //console.log({ method, path, name })
         meta.push({ method, path, name });
         Reflect.defineMetadata('$routes', meta, target);
     }

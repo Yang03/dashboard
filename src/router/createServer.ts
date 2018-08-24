@@ -7,6 +7,7 @@ export function createServer(app: any, routerRoutes: any, controllers: any): any
         const controllerDirs = (controllers as any[]).filter(controller => typeof controller === "string");
         controllerClasses.push(...importClassesFromDirectories(controllerDirs));
     }
+
     for(const ctrl of controllerClasses) {
         const routes = Reflect.getMetadata('$routes', ctrl);
         for(const { method, path, controller } of routes) {
@@ -16,3 +17,12 @@ export function createServer(app: any, routerRoutes: any, controllers: any): any
     app.use(routerRoutes.routes());
     app.use(routerRoutes.allowedMethods());
 }
+
+// export function autoLoadService(service: any): any {
+//     let serviceClasses: Function[];
+//     if (service && service.length) {
+//         serviceClasses = (service as any[]).filter(service => service instanceof Function);
+//         const serviceDirs = (service as any[]).filter(service => typeof service === "string");
+//         serviceClasses.push(...importClassesFromDirectories(serviceDirs));
+//     }
+// }
